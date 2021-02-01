@@ -13,8 +13,22 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div>
+      <ion-button full (click)="startListening()">Start Listening</ion-button>
+      <!-- <div *ngIf="isRecording"> -->
+      <ion-button full (click)="stopListening()">Stop Listening</ion-button>
+      <!-- </div> -->  
+      <ion-list>
+          <ion-item>
+              音声認識:{{matches}}
+          </ion-item>
+          <div *ngIf="searchProduct">
+              <ion-item>商品ID:{{ searchProduct.id }}</ion-item>
+              <ion-item>商品名:{{ searchProduct.name }}</ion-item>
+              <ion-item>価格:{{ searchProduct.price }}</ion-item>
+          </div>
+      </ion-list>
   </div>
+
+
 </ion-content>
